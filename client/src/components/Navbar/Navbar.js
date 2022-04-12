@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Avatar, Button, ThemeProvider, Toolbar, Typography } from "@material-ui/core";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
 import useStyles from "./styles";
-import memoriesLogo from "../../images/memories-Logo.png";
-import memoriesText from "../../images/memories-Text.png";
+import logoMemories from "../../images/Memories-Logo1.png";
+import textMemories from "../../images/Memories-Text2.png";
 import { LOGOUT } from "../../constants/actiontype";
 
 const Navbar = () => {
@@ -37,10 +37,10 @@ const Navbar = () => {
 	}, [location]);
 
 	return (
-		<AppBar className={classes.appBar} position="static" color="inherit">
+		<AppBar className={classes.appBar} position="static" color="primary">
 			<Link to="/" className={classes.brandContainer}>
-				<img src={memoriesText} alt="icon" height="45px" />
-				<img className={classes.image} src={memoriesLogo} alt="memories" height="40" />
+				<img className={classes.image} src={logoMemories} alt="memories" height="100" />
+				<img src={textMemories} alt="icon" height="100px" />
 			</Link>
 			<Toolbar className={classes.toolbar}>
 				{user ? (
